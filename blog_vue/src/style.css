@@ -1,0 +1,97 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&family=Nunito:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  /* 让背景透明，透出星空 canvas */
+  background-color: transparent;
+  font-family: 'M PLUS Rounded 1c', 'Nunito', 'Microsoft YaHei', sans-serif !important;
+  color: #eee;
+  overflow-x: hidden;
+  cursor: url('https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/normal.cur'),
+    auto;
+}
+
+button,
+input,
+textarea {
+  font-family: 'M PLUS Rounded 1c', 'Nunito', 'Microsoft YaHei', sans-serif !important;
+}
+
+/* 自定义滚动条 - Webkit 浏览器 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f2027;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #409eff;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #66b1ff;
+}
+
+a:hover,
+button:hover,
+.post-card:hover,
+.friend-card:hover,
+.article-card:hover {
+  cursor: url('https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/work.cur'),
+    pointer;
+}
+
+/* 卡片水印背景（可在具体组件中覆盖） */
+/* 卡片水印背景（如需开启，可取消注释并替换图片）
+.glass-card,
+.post-card,
+.friend-card {
+  background-image: url('./assets/linger.png');
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: 120px;
+  background-blend-mode: overlay;
+}
+*/
+
+/* 标题萌化装饰：旋转的小图标 */
+h2,
+.section-title {
+  position: relative;
+  padding-left: 40px;
+}
+
+h2::before,
+.section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background: url('https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/startash.svg')
+    no-repeat center;
+  background-size: contain;
+  animation: rotate-kawaii 5s linear infinite;
+}
+
+@keyframes rotate-kawaii {
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
